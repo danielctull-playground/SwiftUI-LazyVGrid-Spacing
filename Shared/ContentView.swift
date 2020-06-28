@@ -1,15 +1,20 @@
-//
-//  ContentView.swift
-//  Shared
-//
-//  Created by Daniel Tull on 28.06.2020.
-//
 
 import SwiftUI
 
 struct ContentView: View {
+
+    let columns = Array(repeating: GridItem(.flexible()), count: 2)
+
     var body: some View {
-        Text("Hello, world!").padding()
+        LazyVGrid(columns: columns, spacing: 0) {
+            ForEach(1..<11) { index in
+                Text("Item \(index)")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color(white: 1 / Double(index)))
+                    .foregroundColor(.red)
+            }
+        }
     }
 }
 
