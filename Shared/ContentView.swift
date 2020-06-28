@@ -3,7 +3,7 @@ import SwiftUI
 
 struct ContentView: View {
 
-    let columns = Array(repeating: GridItem(.flexible()), count: 2)
+    let columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 2)
 
     var body: some View {
         LazyVGrid(columns: columns, spacing: 0) {
@@ -21,5 +21,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .previewLayout(.fixed(width: 400, height: 400))
     }
 }
